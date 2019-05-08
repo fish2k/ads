@@ -1,3 +1,4 @@
+@import url('css/bs.min.css')
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i')
 
 $default-font: 'Source Sans Pro'
@@ -11,3 +12,50 @@ body
   font-family: $default-font
   font-size: 18px
   line-height: 1.5em
+
+.header-logo
+  padding-top: 10px
+  & img
+    max-width: 100%
+
+.header-nav
+  margin: 0
+  padding: 0
+  list-style-type: none
+  & li
+    display: inline-block
+    margin-right: 15px
+    & a
+      text-decoration: none
+      color: $blue
+      font-weight: 600
+
+.header-right_item
+  float: left
+  width: 40%
+  &:first-child
+    width: calc(60% - 15px)
+    margin-right: 15px
+    text-align: right
+  & span
+    font-size: .7em
+    color: $ltblue
+    display: block
+    line-height: 1
+    padding-top: 8px
+  & a
+    display: block
+    font-weight: 800
+    text-decoration: none
+    color: $blue
+    font-size: 1.54em
+    line-height: 1
+    &.button
+      font-size: 1em
+      text-align: center
+      background-color: $blue
+      color: #ffffff
+      border-radius: 5px
+      line-height: 2.5em
+      font-weight: 600
+      text-transform: uppercase
