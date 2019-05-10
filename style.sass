@@ -32,6 +32,9 @@ header
   list-style-type: none
   & li
     display: inline-block
+    &.active
+      & a
+        font-weight: 800
     & a
       text-decoration: none
       color: $blue
@@ -59,12 +62,24 @@ header
     display: block
     line-height: 1
     padding-top: 8px
-
-.header-content
-  height: 635px
+  
+.header-home
   background-image: url(img/header-home.png)
   background-size: cover
   background-position: center
+
+.header-about
+  background-image: url(img/header-about.png)
+  background-size: cover
+  background-position: center
+
+.header-contacts
+  background-image: url(img/header-contacts.png)
+  background-size: cover
+  background-position: center
+
+.header-content
+  height: 635px
   border-top: .3px solid transparent
   position: relative
   color: #fff
@@ -396,11 +411,89 @@ footer
     font-size: 1.5em
 
 .footer-block
-  font-size: .9em
+  font-size: .8em
   line-height: 1.1
   color: $gray
   & a
     color: $gray
+
+#content
+  padding-top: 80px
+  padding-bottom: 80px
+  & p
+    color: $gray
+  & .message
+    & > p
+      color: #666F84
+      font-size: .9em
+  & b
+    text-transform: uppercase
+    color: $ltblue
+    display: block
+    margin-top: 15px
+
+.col-content
+  &:nth-of-type(2)
+    padding-left: 50px
+  &:first-child
+    position: relative
+    padding-right: 50px
+    &:after
+      position: absolute
+      content: ''
+      right: 2px
+      top: 0
+      bottom: 0
+      width: 1px
+      background-color: #d0d0d0
+
+.content-sidebar
+  &_item
+    & h3
+      margin-top: 0
+      margin-bottom: 0
+      font-size: 2.4em
+      font-weight: 600
+      color: $blue
+      line-height: 1
+    & small
+      color: $ltblue
+      display: block
+      line-height: 1.5
+      margin-bottom: 15px
+
+.content-contacts
+  display: flex
+  flex-direction: column
+
+.content-item
+  display: flex
+  flex: 0 0 100%
+  max-width: 100%
+  padding-left: 70px
+  margin-top: 15px
+  margin-bottom: 1px
+  position: relative
+  &:before
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    width: 60px
+    height: 60px
+    background-color: $blue
+
+.phone:before
+  background-image: url(img/icons/tel.png)
+  background-size: contain
+
+.fax:before
+  background-image: url(img/icons/fax.png)
+  background-size: contain
+
+.envelope:before
+  background-image: url(img/icons/envelope.png)
+  background-size: contain
 
 @media (min-width: 1280px)
   header
