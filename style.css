@@ -99,12 +99,18 @@ header {
   background-color: #2E3192;
   color: #fff;
   font-size: .9em;
+  font-family: inherit;
+  min-width: 200px;
   display: table;
   line-height: 2.8em;
   border-radius: 5px;
   text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
   font-weight: 800;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .button-middle {
@@ -167,8 +173,9 @@ section p.big {
 section h2 {
   text-align: center;
   color: #2E3192;
-  font-size: 2.5em;
+  font-size: 3.2em;
   font-weight: 600;
+  line-height: 1;
   margin: 0;
 }
 
@@ -179,7 +186,6 @@ section h2 {
 .heading-left {
   text-align: left;
   line-height: 1;
-  font-size: 3.2em;
 }
 
 .p-left {
@@ -239,9 +245,21 @@ hr {
   color: #fff;
 }
 
+#savings-estimator-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 #savings-estimator-form label {
   display: block;
   margin-bottom: 15px;
+}
+
+#savings-estimator-form label span {
+  display: inline;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 200;
 }
 
 #savings-estimator-form label input {
@@ -253,8 +271,28 @@ hr {
 #savings-estimator-form label input[type="text"] {
   padding-left: 10px;
   padding-right: 10px;
-  line-height: 2em;
+  line-height: 1.5em;
   border: 1px solid #888;
+  text-align: center;
+  color: #2E3192;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#savings-estimator-form label input[type="text"]::-webkit-input-placeholder {
+  color: #9EBBD9;
+}
+
+#savings-estimator-form label input[type="text"]:-ms-input-placeholder {
+  color: #9EBBD9;
+}
+
+#savings-estimator-form label input[type="text"]::-ms-input-placeholder {
+  color: #9EBBD9;
+}
+
+#savings-estimator-form label input[type="text"]::placeholder {
+  color: #9EBBD9;
 }
 
 #savings-estimator-form label input[type="range"] {
@@ -342,11 +380,167 @@ hr {
   background: #ffffff;
 }
 
-#savings-estimator-form label span {
-  display: inline;
-  color: #fff;
+.form-total {
+  background-color: #fff;
+  color: #2E3192;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 70px;
+  position: relative;
+}
+
+.form-total:before {
+  position: absolute;
+  content: '';
+  top: -40px;
+  left: calc(50% - 20px);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 35px 40px 35px;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.form-total_block {
+  display: table;
+  width: 100%;
+  position: relative;
+}
+
+.form-total_block:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 50%;
+  bottom: 0;
+  width: 1px;
+  background-color: #c0c0c0;
+}
+
+.form-total_block:first-child:before {
+  top: 40px;
+}
+
+.form-total_block:last-child:before {
+  bottom: 30px;
+}
+
+.form-total_value {
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.form-total_desc {
+  font-size: .8em;
+  line-height: 1;
+  color: #686868;
+}
+
+.form-total_desc small {
+  font-size: .75em;
+}
+
+.form-total_item {
+  display: table-cell;
+  width: 50%;
+  vertical-align: middle;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.form-total_item:first-child {
+  text-align: right;
+  padding-right: 60px;
+}
+
+.form-total_item:last-child {
+  text-align: center;
+}
+
+.form-total_item span {
+  color: #2E3192;
+}
+
+.form-bottomtext {
+  font-size: .6em;
+  line-height: 1;
+  padding-top: 30px;
+}
+
+#consumer-affairs,
+#getstarted {
+  padding-top: 80px;
+}
+
+#getstarted {
+  background-color: #f6f6f6;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form-getstarted_label {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  color: #686868;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.form-getstarted_input {
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 3em;
+}
+
+footer {
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.footer-certifications {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-top: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+  margin-bottom: 70px;
+}
+
+.footer-certifications h3 {
+  position: absolute;
+  top: -15px;
+  left: calc(50% - 90px);
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #fff;
+  z-index: 5;
+  color: #9EBBD9;
+  font-weight: 400;
   font-size: 1.5em;
-  font-weight: 200;
+}
+
+.footer-block {
+  font-size: .9em;
+  line-height: 1.1;
+  color: #686868;
+}
+
+.footer-block a {
+  color: #686868;
 }
 
 @media (min-width: 1280px) {
