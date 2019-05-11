@@ -1,5 +1,5 @@
 @import url('css/bs.min.css')
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,400i,600,600i,700,700i')
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700')
 
 $default-font: 'Source Sans Pro', sans-serif
 $blue: #2E3192
@@ -78,6 +78,16 @@ header
   background-size: cover
   background-position: center
 
+.header-how
+  background-image: url(img/header-how.png)
+  background-size: cover
+  background-position: center
+
+.header-why
+  background-image: url(img/header-why.png)
+  background-size: cover
+  background-position: center
+
 .header-content
   height: 635px
   border-top: .3px solid transparent
@@ -100,7 +110,7 @@ header
   color: #fff
   font-size: .9em
   font-family: inherit
-  min-width: 200px
+  min-width: 180px
   display: table
   line-height: 2.8em
   border-radius: 5px
@@ -420,8 +430,22 @@ footer
 #content
   padding-top: 80px
   padding-bottom: 80px
+  & ul
+    color: $ltblue
+    font-size: 1.5em
+    line-height: 1.5
   & p
     color: $gray
+    &.subheading
+      text-align: center
+      color: $ltblue
+      font-size: 1.2em
+    & > i
+      text-transform: none
+      font-weight: 400
+      font-size: 1.3em
+      font-style: normal
+      color: $ltblue
   & .message
     & > p
       color: #666F84
@@ -495,7 +519,196 @@ footer
   background-image: url(img/icons/envelope.png)
   background-size: contain
 
+.collapse
+  &:not(.show)
+    display: none
+
+.card-body
+  padding: 15px
+  color: $blue
+
+.collapsing
+  position: relative
+  height: 0
+  overflow: hidden
+  transition: height .35s ease
+
+.accordion-button
+  display: block
+  width: 100%
+  border: none
+  text-align: left
+  padding: 0 15px
+  line-height: 2.25em
+  background-color: #fff
+  box-shadow: 0 0 15px rgba($ltblue, .5)
+  color: $ltblue
+  font-size: 1.5em
+  font-family: inherit
+  font-weight: 400
+  &:hover
+    cursor: pointer
+  &:focus
+    outline: none
+
+.page-how_icon
+  height: 300px
+  display: table
+  margin: 30px auto 0
+
+.col-how
+  border-bottom: 1px solid #d0d0d0
+  padding-top: 50px
+  padding-bottom: 50px
+
+.why-ads
+  &_title
+    text-transform: uppercase
+    font-weight: 800
+    margin-top: 15px
+    height: 3.5em
+    color: $blue
+  &_desc
+    color: $gray
+
+.access
+  background-color: #F5FAFD
+
 @media (min-width: 1280px)
   header
     & > .container
       max-width: 1260px
+
+@media (max-width: 1024px)
+  .header-logo
+    display: table
+    margin: 0 auto
+
+  .header-nav
+    display: table
+    margin: 0 auto
+  
+  .header-right
+    display: table
+    margin: 0 auto
+    width: 100%
+    align-self: center
+    padding-bottom: 15px
+    padding-top: 15px
+  
+  .header-bottom
+    flex-direction: column
+    &_item
+      max-width: 100%
+      flex: 0 0 100%
+      padding-top: 15px
+      padding-bottom: 15px
+  
+  .header-content
+    height: unset
+    padding-bottom: 80px
+
+@media (max-width: 768px)
+  .why-ads
+    flex: 0 0 50%
+    max-width: 50%
+    padding-bottom: 30px
+  
+  .col-content
+    &:first-child
+      padding-right: 15px
+    &:last-child
+      padding-left: 15px
+      padding-top: 25px
+
+@media (max-width: 500px)
+  .col-how
+    padding-top: 15px
+    padding-bottom: 15px
+    &:nth-of-type(2),
+    &:nth-of-type(3),
+    &:nth-of-type(6),
+    &:nth-of-type(7)
+      display: none
+
+  #content
+    & ul
+      font-size: 1em
+  
+  .access
+    & img
+      &:not([width="100%"])
+        width: 100%
+
+  .why-ads
+    flex: 0 0 100%
+    max-width: 100%
+  
+  p
+    font-size: .8em !important
+
+  .header-content
+    background-position: 500px 0
+    position: relative
+    & .container
+      position: relative
+    &:before
+      position: absolute
+      content: ''
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      background-color: rgba($blue, .7)
+    & h1
+      font-size: 2em
+      text-shadow: 0 0 10px rgba($blue, 1)
+    & p
+      text-shadow: 0 0 10px rgba($blue, 1)
+  
+  section h2
+    font-size: 1.5em
+
+  h3
+    font-size: 1em !important
+
+  .form-total_item
+    &:last-child
+      font-size: .9em
+      line-height: 1em
+      text-align: left
+      padding-left: 20px
+      padding-right: 1px
+    &:first-child
+      padding-right: 25px
+      padding-left: 10px
+  
+  .button
+    min-width: unset
+    padding-left: 15px
+    padding-right: 15px
+    margin-bottom: 15px
+  
+  .header-nav
+    text-align: center
+    & li
+      & a
+        padding: 0
+        margin-right: 5px
+        margin-left: 5px
+        border-bottom: 1px dashed $blue
+
+@media (max-width: 360px)
+  .header-right
+    &_item
+      float: none
+      width: 100%
+      text-align: center
+      &:nth-of-type(2)
+        & > a
+          margin: 0 auto
+      &:first-child
+        float: none
+        width: 100%
+        text-align: center
+        margin-bottom: 15px
